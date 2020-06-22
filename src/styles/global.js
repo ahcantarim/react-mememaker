@@ -12,6 +12,15 @@ export default createGlobalStyle`
 		background: #eee;
 	}
 
+	a {
+		text-decoration: none;
+		color: hsla(0,0%,100%,.7);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	button,
 	input {
 		outline: 0;

@@ -45,12 +45,14 @@ export const Templates = styled.div`
         border: 2px solid transparent;
 
         &.selected {
-            border-color: #4395D8
+            border-color: #4395D8;
+            border-radius: 8px;
         }
 
         img {
             width: 53px;
             height: 53px;
+            border-radius: 8px;
         }
     }
 `;

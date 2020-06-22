@@ -54,49 +54,53 @@ export default function Home() {
     }
 
     return (
-        <Wrapper>
-            <img src={logo} alt="MemeMaker" />
+        <>
 
-            <Card>
-                {generatedMeme && (
-                    <>
-                        <img class="generated-meme" src={generatedMeme} alt="Generated Meme" />
-                        <Button type="button" onClick={handleReset}>Create another Meme</Button>
-                    </>
-                )}
 
-                {!generatedMeme && (
-                    <>
-                        <h2>Selecione um template</h2>
-                        <Templates>
-                            {templates.map((template) => (
-                                <button
-                                    key={template.id}
-                                    type="button"
-                                    onClick={() => handleSelectTemplate(template)}
-                                    className={template.id === selectedTemplate?.id ? 'selected' : ''}>
-                                    <img src={template.url} alt={template.name} />
-                                </button>
-                            ))}
-                        </Templates>
+            <Wrapper>
+                <img src={logo} alt="MemeMaker" />
 
-                        {selectedTemplate && (
-                            <>
-                                <h2>Textos</h2>
-                                <Form onSubmit={handleSubmit}>
-                                    {(new Array(selectedTemplate.box_count)).fill('').map((_, index) => (
-                                        <input
-                                            key={String(Math.random())}
-                                            placeholder={`Texto #${index + 1}`}
-                                            onChange={handleInputChange(index)} />
-                                    ))}
-                                    <Button>MakeMyMeme</Button>
-                                </Form>
-                            </>
-                        )}
-                    </>
-                )}
-            </Card>
-        </Wrapper>
+                <Card>
+                    {generatedMeme && (
+                        <>
+                            <img class="generated-meme" src={generatedMeme} alt="Generated Meme" />
+                            <Button type="button" onClick={handleReset}>Create another Meme</Button>
+                        </>
+                    )}
+
+                    {!generatedMeme && (
+                        <>
+                            <h2>Selecione um template</h2>
+                            <Templates>
+                                {templates.map((template) => (
+                                    <button
+                                        key={template.id}
+                                        type="button"
+                                        onClick={() => handleSelectTemplate(template)}
+                                        className={template.id === selectedTemplate?.id ? 'selected' : ''}>
+                                        <img src={template.url} alt={template.name} />
+                                    </button>
+                                ))}
+                            </Templates>
+
+                            {selectedTemplate && (
+                                <>
+                                    <h2>Textos</h2>
+                                    <Form onSubmit={handleSubmit}>
+                                        {(new Array(selectedTemplate.box_count)).fill('').map((_, index) => (
+                                            <input
+                                                key={String(Math.random())}
+                                                placeholder={`Texto #${index + 1}`}
+                                                onChange={handleInputChange(index)} />
+                                        ))}
+                                        <Button>MakeMyMeme</Button>
+                                    </Form>
+                                </>
+                            )}
+                        </>
+                    )}
+                </Card>
+            </Wrapper>
+        </>
     );
 }
