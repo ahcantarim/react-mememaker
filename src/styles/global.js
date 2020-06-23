@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'antd/dist/antd.css';
 
 export default createGlobalStyle`
 	* {
@@ -9,15 +10,15 @@ export default createGlobalStyle`
 	}
 
 	body {
-		background: #eee;
+		background: #eee !important;
 	}
 
 	a {
 		text-decoration: none;
-		color: hsla(0,0%,100%,.7);
+		color: hsla(0,0%,100%,.7) !important;
 
 		&:hover {
-			text-decoration: underline;
+			text-decoration: underline !important;
 		}
 	}
 

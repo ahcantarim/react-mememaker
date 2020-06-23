@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import qs from 'qs';
-
-import { Wrapper, Card, Templates, Form, Button } from './styles';
+import { Wrapper, Card2, Templates, Form, Button } from './styles';
 import logo from '../../images/logo.svg';
+
+import { Card, Input, Tooltip, Space, Divider } from 'antd';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+
+const { Meta } = Card;
 
 export default function Home() {
 
@@ -55,12 +59,10 @@ export default function Home() {
 
     return (
         <>
-
-
             <Wrapper>
                 <img src={logo} alt="MemeMaker" />
 
-                <Card>
+                <Card2>
                     {generatedMeme && (
                         <>
                             <img class="generated-meme" src={generatedMeme} alt="Generated Meme" />
@@ -70,36 +72,44 @@ export default function Home() {
 
                     {!generatedMeme && (
                         <>
-                            <h2>Selecione um template</h2>
+                            <Divider orientation="left">Select a template</Divider>
                             <Templates>
                                 {templates.map((template) => (
-                                    <button
-                                        key={template.id}
-                                        type="button"
-                                        onClick={() => handleSelectTemplate(template)}
-                                        className={template.id === selectedTemplate?.id ? 'selected' : ''}>
-                                        <img src={template.url} alt={template.name} />
-                                    </button>
+                                    <Tooltip
+                                        title={template.name}
+                                        key={template.id}>
+                                        <button
+                                            type="button"
+                                            onClick={() => handleSelectTemplate(template)}
+                                            className={template.id === selectedTemplate?.id ? 'selected' : ''}>
+                                            <img src={template.url} alt={template.name} />
+                                        </button>
+                                    </Tooltip>
                                 ))}
                             </Templates>
 
                             {selectedTemplate && (
                                 <>
-                                    <h2>Textos</h2>
+                                    <Divider orientation="left">{selectedTemplate.name}</Divider>
                                     <Form onSubmit={handleSubmit}>
-                                        {(new Array(selectedTemplate.box_count)).fill('').map((_, index) => (
-                                            <input
-                                                key={String(Math.random())}
-                                                placeholder={`Texto #${index + 1}`}
-                                                onChange={handleInputChange(index)} />
-                                        ))}
-                                        <Button>MakeMyMeme</Button>
+                                        <Space direction="vertical">
+                                            {(new Array(selectedTemplate.box_count)).fill('').map((_, index) => (
+                                                <Input
+                                                    required
+                                                    allowClear="true"
+                                                    key={String(Math.random())}
+                                                    size="large"
+                                                    placeholder={`Texto #${index + 1}`}
+                                                    onChange={handleInputChange(index)} />
+                                            ))}
+                                            <Button>Generate my Meme</Button>
+                                        </Space>
                                     </Form>
                                 </>
                             )}
                         </>
                     )}
-                </Card>
+                </Card2>
             </Wrapper>
         </>
     );
