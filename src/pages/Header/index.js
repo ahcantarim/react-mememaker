@@ -14,7 +14,9 @@ export default function Header() {
             </HeaderItem>
             <HeaderItem><a href="https://github.com/ahcantarim" target="_blank" rel="noopener noreferrer"><strong>ahcantarim</strong></a></HeaderItem>
             <HeaderItem><strong>/</strong></HeaderItem>
-            <HeaderItemFull><a href="https://github.com/ahcantarim/react-mememaker" target="_blank" rel="noopener noreferrer">react-mememaker</a></HeaderItemFull>
+            <HeaderItem><a href="https://github.com/ahcantarim/react-mememaker" target="_blank" rel="noopener noreferrer">react-mememaker</a></HeaderItem>
+            <HeaderItem>/</HeaderItem>
+            <HeaderItemFull>A meme generator for studying purposes made in ReactJS</HeaderItemFull>
         </HeaderRoot>
     );
 }

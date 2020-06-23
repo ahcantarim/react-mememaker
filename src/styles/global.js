@@ -10,7 +10,7 @@ export default createGlobalStyle`
 	}
 
 	body {
-		background: #eee !important;
+		/* background: #eee !important; */
 	}
 
 	a {
@@ -29,5 +29,9 @@ export default createGlobalStyle`
 
 	button {
 		cursor: pointer;
+	}
+
+	div [class~='ant-space'] {
+		width: 100%;
 	}
 `;

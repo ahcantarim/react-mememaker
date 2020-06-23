@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import qs from 'qs';
-import { Wrapper, Card2, Templates, Form, Button } from './styles';
-import logo from '../../images/logo.svg';
+import { Templates, Form, Body } from './styles';
 
-import { Card, Input, Tooltip, Space, Divider } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
-
-const { Meta } = Card;
+import { Input, Tooltip, Space, Divider, Button } from 'antd';
+import { Row, Col } from 'antd';
+import { UndoOutlined, ExperimentOutlined } from '@ant-design/icons';
 
 export default function Home() {
+
+    // * ATENÇÃO: Alterar credenciais para imgflip de acordo com seu cadastro:
+    const imgflipUsername = "vikayel543";
+    const imgflippassword = "vikayel543";
 
     const [templates, setTemplates] = useState([]);
     const [selectedTemplate, setSelectedTemplate] = useState(null);
@@ -40,8 +42,8 @@ export default function Home() {
 
         const params = qs.stringify({
             template_id: selectedTemplate.id,
-            username: 'vikayel543', //TODO: colocar o usuário em const no início do código
-            password: 'vikayel543', //TODO: colocar a senha em const no início do código
+            username: imgflipUsername,
+            password: imgflippassword,
             boxes: boxes.map(text => ({ text }))
         });
 
@@ -58,21 +60,12 @@ export default function Home() {
     }
 
     return (
-        <>
-            <Wrapper>
-                <img src={logo} alt="MemeMaker" />
-
-                <Card2>
-                    {generatedMeme && (
-                        <>
-                            <img class="generated-meme" src={generatedMeme} alt="Generated Meme" />
-                            <Button type="button" onClick={handleReset}>Create another Meme</Button>
-                        </>
-                    )}
-
-                    {!generatedMeme && (
-                        <>
-                            <Divider orientation="left">Select a template</Divider>
+        <Body>
+            {!generatedMeme && (
+                <>
+                    <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}>First, select an existing template</Divider>
+                    <Row>
+                        <Col span={24}>
                             <Templates>
                                 {templates.map((template) => (
                                     <Tooltip
@@ -87,11 +80,15 @@ export default function Home() {
                                     </Tooltip>
                                 ))}
                             </Templates>
+                        </Col>
+                    </Row>
 
-                            {selectedTemplate && (
-                                <>
-                                    <Divider orientation="left">{selectedTemplate.name}</Divider>
-                                    <Form onSubmit={handleSubmit}>
+                    {selectedTemplate && (
+                        <>
+                            <Divider orientation="left">Then, fill <strong>{selectedTemplate.box_count} boxes</strong> bellow, required for "<strong>{selectedTemplate.name}</strong>"</Divider>
+                            <Row>
+                                <Col span={24}>
+                                    <form onSubmit={handleSubmit}>
                                         <Space direction="vertical">
                                             {(new Array(selectedTemplate.box_count)).fill('').map((_, index) => (
                                                 <Input
@@ -99,18 +96,47 @@ export default function Home() {
                                                     allowClear="true"
                                                     key={String(Math.random())}
                                                     size="large"
-                                                    placeholder={`Texto #${index + 1}`}
+                                                    placeholder={`Value #${index + 1}`}
                                                     onChange={handleInputChange(index)} />
                                             ))}
-                                            <Button>Generate my Meme</Button>
+
+                                            <Button
+                                                block
+                                                htmlType="submit"
+                                                type="primary"
+                                                size="large"
+                                                icon={<ExperimentOutlined />}>Try this</Button>
                                         </Space>
-                                    </Form>
-                                </>
-                            )}
+                                    </form>
+                                </Col>
+                            </Row>
                         </>
                     )}
-                </Card2>
-            </Wrapper>
-        </>
+                </>
+            )
+            }
+
+            {
+                generatedMeme && (
+                    <>
+                        <Divider orientation="left" style={{ color: '#333', fontWeight: 'normal' }}>Enjoy the result</Divider>
+                        <Row>
+                            <Col span={24}>
+                                <Space direction="vertical">
+                                    <img src={generatedMeme} alt="Generated meme" />
+                                    <Button
+                                        block
+                                        type="primary"
+                                        size="large"
+                                        onClick={handleReset}
+                                        icon={<UndoOutlined />}>Start over</Button>
+                                </Space>
+                            </Col>
+                        </Row>
+                    </>
+                )
+            }
+
+        </Body >
     );
 }

@@ -7,7 +7,7 @@ export const HeaderRoot = styled.div`
     z-index: 32;
     padding: 16px;
     font-size: 14px;
-    color: hsla(0,0%,100%,.7);
+    color: #fff;
     background-color: #24292e;
 
     position: fixed;
