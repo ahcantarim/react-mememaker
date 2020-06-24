@@ -51,7 +51,7 @@ $ npm install
 No diretório do projeto, executar o comando:
 
 ```bash
-npm start
+$ npm start
 ```
 
 Será inicializado o servidor de desenvolvimento, que pode ser acessado através do browser no endereço <http://localhost:3000>.
