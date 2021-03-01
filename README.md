@@ -44,15 +44,9 @@
         </ul>
     </li>
     <li><a href="#utilizando-a-aplicação">Utilizando a aplicação</a></li>
-    <li><a href="#roteiro-de-melhorias">Roteiro de melhorias</a></li>
-    <li><a href="#contribuições">Contribuições</a></li>
     <li><a href="#licença">Licença</a></li>
     <li><a href="#contato">Contato</a></li>
-    <li><a href="#referências">Referências</a></li>
 </ol>
-
-
-<a href="#sumário">🔝 Voltar ao topo</a>
 
 
 <!-- ABOUT THE PROJECT -->
@@ -106,10 +100,11 @@ Você precisará basicamente de um ambiente com [NodeJS](https://nodejs.org/) in
 
 ### Instalando as dependências
 
-1. Instalar os pacotes NPM
-   ```bash
-   npm install
-   ```
+No diretório do projeto, executar o comando:
+
+```bash
+npm install # Instala os pacotes NPM
+```
 
 
 <a href="#sumário">🔝 Voltar ao topo</a>
@@ -118,36 +113,13 @@ Você precisará basicamente de um ambiente com [NodeJS](https://nodejs.org/) in
 <!-- USAGE EXAMPLES -->
 ## Utilizando a aplicação
 
-1. No diretório do projeto, executar o comando:
-   ```bash
-   npm start
-   ```
+No diretório do projeto, executar o comando:
 
-Será inicializado o servidor de desenvolvimento, que pode ser acessado através do browser no endereço <http://localhost:3000>.
+```bash
+npm start
+```
 
-
-<a href="#sumário">🔝 Voltar ao topo</a>
-
-
-<!-- ROADMAP -->
-## Roteiro de melhorias
-
-Não se aplica.
-
-
-<a href="#sumário">🔝 Voltar ao topo</a>
-
-
-<!-- CONTRIBUTING -->
-## Contribuições
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Será inicializado o servidor de desenvolvimento, que pode ser acessado através do *browser* no endereço <http://localhost:3000>.
 
 
 <a href="#sumário">🔝 Voltar ao topo</a>
@@ -168,15 +140,6 @@ Distribuído através da licença MIT. Veja `LICENSE` para mais informações.
 André Cantarim
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-<a href="#sumário">🔝 Voltar ao topo</a>
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Referências
-
-Não se aplica.
 
 
 <a href="#sumário">🔝 Voltar ao topo</a>
