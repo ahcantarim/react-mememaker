@@ -61,18 +61,12 @@ Para visualizar o projeto original, acesse:
 - [Repositório Original](https://github.com/maateusilva/mememaker)
 
 
-<a href="#sumário">🔝 Voltar ao topo</a>
-
-
 ### Tecnologias utilizadas
 
 - [ReactJS](https://github.com/facebook/create-react-app)
 - [Styled Components](https://github.com/styled-components/styled-components)
 - [Ant Design](https://ant.design/)
 - [API do Imgflip](https://api.imgflip.com/)
-
-
-<a href="#sumário">🔝 Voltar ao topo</a>
 
 
 <!-- GETTING STARTED -->
@@ -85,17 +79,11 @@ Para obter uma cópia local atualizada e que possa ser executada corretamente, s
 Você precisará basicamente de um ambiente com [NodeJS](https://nodejs.org/) instalado.
 
 
-<a href="#sumário">🔝 Voltar ao topo</a>
-
-
 ### Clonando o repositório
 
    ```bash
    git clone https://github.com/ahcantarim/react-mememaker.git
    ```
-
-
-<a href="#sumário">🔝 Voltar ao topo</a>
 
 
 ### Instalando as dependências
@@ -105,9 +93,6 @@ No diretório do projeto, executar o comando:
 ```bash
 npm install
 ```
-
-
-<a href="#sumário">🔝 Voltar ao topo</a>
 
 
 <!-- USAGE EXAMPLES -->
@@ -122,16 +107,10 @@ npm start
 Será inicializado o servidor de desenvolvimento, que pode ser acessado através do *browser* no endereço <http://localhost:3000>.
 
 
-<a href="#sumário">🔝 Voltar ao topo</a>
-
-
 <!-- LICENSE -->
 ## Licença
 
 Distribuído através da licença MIT. Veja `LICENSE` para mais informações.
-
-
-<a href="#sumário">🔝 Voltar ao topo</a>
 
 
 <!-- CONTACT -->
